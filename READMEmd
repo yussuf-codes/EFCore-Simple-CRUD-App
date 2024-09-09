@@ -1,0 +1,25 @@
+1. Install entity framework core packages
+
+    ```shell
+    dotnet add package Microsoft.EntityFrameworkCore
+    dotnet add package Microsoft.EntityFrameworkCore.Design
+    dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+    ```
+
+2. Install entity framework core tools
+
+    ```shell
+    dotnet tool install dotnet-ef --global
+    ```
+
+3. Make migrations
+
+    ```shell
+    dotnet-ef migrations add <Migration Name>
+    ```
+
+4. Update the database
+
+    ```shell
+    dotnet-ef database update
+    ```
