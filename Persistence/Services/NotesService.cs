@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Exceptions;
-using Models;
-using Repositories.IRepositories;
+using Persistence.Exceptions;
+using Persistence.Models;
+using Persistence.Repositories.IRepositories;
 
-namespace Services;
+namespace Persistence.Services;
 
 class NotesService
 {

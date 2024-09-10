@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Models;
-using Persistence;
-using Repositories.IRepositories;
+using Persistence.Models;
+using Persistence.Data;
+using Persistence.Repositories.IRepositories;
 
-namespace Repositories;
+namespace Persistence.Repositories;
 
 class NotesRepository : IGenericRepository<Note>
 {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesCRUD", "NotesCRUD\NotesCRUD.csproj", "{59783DAF-B0EF-46AA-9065-2C7CABED3E38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{9B6CB897-D809-4833-A76B-B6E362F36604}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{59783DAF-B0EF-46AA-9065-2C7CABED3E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59783DAF-B0EF-46AA-9065-2C7CABED3E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59783DAF-B0EF-46AA-9065-2C7CABED3E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59783DAF-B0EF-46AA-9065-2C7CABED3E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B6CB897-D809-4833-A76B-B6E362F36604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6CB897-D809-4833-A76B-B6E362F36604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6CB897-D809-4833-A76B-B6E362F36604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6CB897-D809-4833-A76B-B6E362F36604}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

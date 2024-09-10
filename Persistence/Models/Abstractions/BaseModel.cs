@@ -1,4 +1,4 @@
-namespace Models.Abstractions;
+namespace Persistence.Models.Abstractions;
 
 abstract class BaseModel
 {

@@ -1,8 +1,8 @@
-namespace Repositories.IRepositories;
-
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Models.Abstractions;
+using Persistence.Models.Abstractions;
+
+namespace Persistence.Repositories.IRepositories;
 
 interface IGenericRepository<T> where T: BaseModel
 {

@@ -1,6 +1,6 @@
-using Models.Abstractions;
+using Persistence.Models.Abstractions;
 
-namespace Models;
+namespace Persistence.Models;
 
 class Note : BaseModel
 {
