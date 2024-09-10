@@ -4,7 +4,7 @@ using Persistence.Models.Abstractions;
 
 namespace Persistence.Repositories.IRepositories;
 
-interface IGenericRepository<T> where T: BaseModel
+public interface IGenericRepository<T> where T: BaseModel
 {
     Task<T> AddAsync(T obj);
     void DeleteAsync(int id);

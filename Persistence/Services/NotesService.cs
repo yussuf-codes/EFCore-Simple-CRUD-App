@@ -6,7 +6,7 @@ using Persistence.Repositories.IRepositories;
 
 namespace Persistence.Services;
 
-class NotesService
+public class NotesService
 {
     private readonly IGenericRepository<Note> _repository;
 

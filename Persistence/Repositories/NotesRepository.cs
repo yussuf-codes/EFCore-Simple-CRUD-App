@@ -7,7 +7,7 @@ using Persistence.Repositories.IRepositories;
 
 namespace Persistence.Repositories;
 
-class NotesRepository : IGenericRepository<Note>
+public class NotesRepository : IGenericRepository<Note>
 {
     private readonly ApplicationDbContext _dbContext;
 
