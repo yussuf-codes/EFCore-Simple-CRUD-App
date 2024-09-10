@@ -6,7 +6,7 @@
     dotnet tool install --global dotnet-ef
     ```
 
-2. Make migrations
+2. Add migrations (if there's any)
 
     ```shell
     dotnet-ef migrations --project Persistence add <Migration Name>
