@@ -23,7 +23,7 @@ public class NotesRepository : IGenericRepository<Note>
         return obj;
     }
 
-    public async void DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
         Note obj = await _dbContext.Notes.SingleAsync(obj => obj.Id == id);
         _dbContext.Notes.Remove(obj);
@@ -48,7 +48,7 @@ public class NotesRepository : IGenericRepository<Note>
         return await _dbContext.Notes.AsNoTracking().SingleAsync(obj => obj.Id == id);
     }
 
-    public async void UpdateAsync(int id, Note newObj)
+    public async Task UpdateAsync(int id, Note newObj)
     {
         Note existingObj = await _dbContext.Notes.SingleAsync(obj => obj.Id == id);
         _dbContext.Notes.Entry(existingObj).CurrentValues.SetValues(newObj);

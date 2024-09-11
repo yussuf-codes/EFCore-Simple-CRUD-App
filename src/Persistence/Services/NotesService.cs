@@ -20,11 +20,11 @@ public class NotesService
         return await _repository.AddAsync(obj);
     }
 
-    public async void DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        if (await _repository.ExistsAsync(id))
-            _repository.DeleteAsync(id);
-        throw new NotFoundException();
+        if (! await _repository.ExistsAsync(id))
+            throw new NotFoundException();
+        await _repository.DeleteAsync(id);
     }
 
     public async Task<IEnumerable<Note>> GetAsync()
@@ -34,15 +34,15 @@ public class NotesService
 
     public async Task<Note> GetAsync(int id)
     {
-        if (await _repository.ExistsAsync(id))
-            return await _repository.GetAsync(id);
-        throw new NotFoundException();
+        if (! await _repository.ExistsAsync(id))
+            throw new NotFoundException();
+        return await _repository.GetAsync(id);
     }
 
-    public async void UpdateAsync(int id, Note newObj)
+    public async Task UpdateAsync(int id, Note newObj)
     {
-        if (await _repository.ExistsAsync(id))
-            _repository.UpdateAsync(id, newObj);
-        throw new NotFoundException();
+        if (! await _repository.ExistsAsync(id))
+            throw new NotFoundException();
+        await _repository.UpdateAsync(id, newObj);
     }
 }
