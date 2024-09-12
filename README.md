@@ -23,3 +23,34 @@
     ```shell
     dotnet-ef database --project Persistence update
     ```
+
+5. Create a console app
+
+    ```shell
+    dotnet new console --output Test --use-program-main
+    dotnet sln add Test
+    ```
+
+6. Add Persistence project reference
+
+    ```shell
+    dotnet add Test reference Persistence
+    ```
+
+7. Inside the main method, create an `ApplicationDbContext` instance
+
+    ```csharp
+    ApplicationDbContext dbContext = new();
+    ```
+
+8. Create an `IGenericRepository<Note>` instance, and inject it with the `ApplicationDbContext` instance
+
+    ```csharp
+    IGenericRepository<Note> repository = new NotesRepository(dbContext);
+    ```
+
+9. Create an `NotesService` instance, and inject it with the `IGenericRepository<Note>` instance
+
+    ```csharp
+    NotesService service = new(repository);
+    ```
