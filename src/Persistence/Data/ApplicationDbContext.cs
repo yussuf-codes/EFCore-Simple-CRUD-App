@@ -12,8 +12,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        IConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
-        .AddUserSecrets(Assembly.GetExecutingAssembly());
+        IConfigurationBuilder configurationBuilder = new ConfigurationBuilder().AddUserSecrets(Assembly.GetExecutingAssembly());
 
         IConfiguration configuration = configurationBuilder.Build();
 

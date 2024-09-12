@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Persistence.Exceptions;
@@ -15,10 +16,7 @@ public class NotesService
         _repository = repository;
     }
 
-    public async Task<Note> AddAsync(Note obj)
-    {
-        return await _repository.AddAsync(obj);
-    }
+    public async Task<Note> AddAsync(Note obj) => await _repository.AddAsync(obj);
 
     public async Task DeleteAsync(int id)
     {
@@ -27,10 +25,7 @@ public class NotesService
         await _repository.DeleteAsync(id);
     }
 
-    public async Task<IEnumerable<Note>> GetAsync()
-    {
-        return await _repository.GetAsync();
-    }
+    public async Task<IEnumerable<Note>> GetAsync() => await _repository.GetAsync();
 
     public async Task<Note> GetAsync(int id)
     {
@@ -39,10 +34,12 @@ public class NotesService
         return await _repository.GetAsync(id);
     }
 
-    public async Task UpdateAsync(int id, Note newObj)
+    public async Task UpdateAsync(int id, Note obj)
     {
+        if (id != obj.Id)
+            throw new InvalidOperationException();
         if (! await _repository.ExistsAsync(id))
             throw new NotFoundException();
-        await _repository.UpdateAsync(id, newObj);
+        await _repository.UpdateAsync(id, obj);
     }
 }

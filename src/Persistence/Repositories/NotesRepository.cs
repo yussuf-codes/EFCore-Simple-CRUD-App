@@ -38,20 +38,13 @@ public class NotesRepository : IGenericRepository<Note>
         return true;
     }
 
-    public async Task<IEnumerable<Note>> GetAsync()
-    {
-        return await _dbContext.Notes.AsNoTracking().ToListAsync();
-    }
+    public async Task<IEnumerable<Note>> GetAsync() => await _dbContext.Notes.AsNoTracking().ToListAsync();
 
-    public async Task<Note> GetAsync(int id)
-    {
-        return await _dbContext.Notes.AsNoTracking().SingleAsync(obj => obj.Id == id);
-    }
+    public async Task<Note> GetAsync(int id) => await _dbContext.Notes.AsNoTracking().SingleAsync(obj => obj.Id == id);
 
-    public async Task UpdateAsync(int id, Note newObj)
+    public async Task UpdateAsync(int id, Note obj)
     {
-        Note existingObj = await _dbContext.Notes.SingleAsync(obj => obj.Id == id);
-        _dbContext.Notes.Entry(existingObj).CurrentValues.SetValues(newObj);
+        _dbContext.Notes.Entry(await _dbContext.Notes.SingleAsync(note => note.Id == id)).CurrentValues.SetValues(obj);
         await _dbContext.SaveChangesAsync();
     }
 }
