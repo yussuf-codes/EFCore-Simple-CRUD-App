@@ -43,13 +43,13 @@
     ApplicationDbContext dbContext = new();
     ```
 
-8. Create an `IGenericRepository<Note>` instance, and inject it with the `ApplicationDbContext` instance
+8. Create an `INotesRepository` instance, and inject it with the `ApplicationDbContext` instance
 
     ```csharp
-    IGenericRepository<Note> repository = new NotesRepository(dbContext);
+    INotesRepository repository = new NotesRepository(dbContext);
     ```
 
-9. Create an `NotesService` instance, and inject it with the `IGenericRepository<Note>` instance
+9. Create an `NotesService` instance, and inject it with the `INotesRepository` instance
 
     ```csharp
     NotesService service = new(repository);
