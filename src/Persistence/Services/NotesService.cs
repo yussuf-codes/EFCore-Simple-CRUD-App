@@ -9,9 +9,9 @@ namespace Persistence.Services;
 
 public class NotesService
 {
-    private readonly IGenericRepository<Note> _repository;
+    private readonly INotesRepository _repository;
 
-    public NotesService(IGenericRepository<Note> repository)
+    public NotesService(INotesRepository repository)
     {
         _repository = repository;
     }
