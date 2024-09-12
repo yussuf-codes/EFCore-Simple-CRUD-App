@@ -37,7 +37,7 @@ public class NotesService
     public async Task UpdateAsync(int id, Note obj)
     {
         if (id != obj.Id)
-            throw new InvalidOperationException();
+            throw new BadRequestException();
         if (! await _repository.ExistsAsync(id))
             throw new NotFoundException();
         await _repository.UpdateAsync(id, obj);
